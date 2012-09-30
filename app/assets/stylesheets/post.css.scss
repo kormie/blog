@@ -1,0 +1,20 @@
+@import 'screen';
+
+.page {
+@include container;
+  header, footer { clear: both; }
+
+  // nav spans 3 columns of total 12.
+  nav { @include span-columns(3,12); }
+
+  .content {
+    // content spans the final (omega) 9 columns of 12.
+    @include span-columns(10 omega,12);
+
+    // main content spans 6 of those 9 columns.
+    .article { @include span-columns(8,9); }
+
+    // secondary content spans the final 3 (omega) of 9 columns.
+    .comments { @include span-columns(8 ,9); }
+   }
+}
